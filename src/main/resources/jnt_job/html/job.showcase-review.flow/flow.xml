@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/webflow
+		http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd
+        ">
+
+    <var name="handler" class="org.jahia.modules.webflow.showcase.JobApplicationHandler"/>
+    
+    <view-state id="list">
+        <on-render>
+            <evaluate
+                expression="handler.getApplicationsForJob(externalContext.nativeRequest.getAttribute('currentResource').node)"
+                result="requestScope.jobApplications" />
+        </on-render>
+        <transition on="review" to="review">
+            <set name="flowScope.applicationId" value="requestParameters.applicationId" />
+        </transition>
+	</view-state>
+
+    <view-state id="review">
+        <on-render>
+            <evaluate
+                expression="handler.getApplication(externalContext.nativeRequest.getAttribute('currentResource').node, flowScope.applicationId)"
+                result="requestScope.jobApplication" />
+        </on-render>
+        <transition on="cancel" to="list" />
+        <transition on="accept" to="list">
+            <evaluate expression="handler.setApplicationStatus(flowScope.applicationId, 'accepted')"/>
+        </transition>
+        <transition on="reject" to="list">
+            <evaluate expression="handler.setApplicationStatus(flowScope.applicationId, 'rejected')"/>
+        </transition>
+    </view-state>
+    
+</flow>

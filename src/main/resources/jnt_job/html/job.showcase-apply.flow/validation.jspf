@@ -1,0 +1,3 @@
+<c:forEach var="msg" items="${flowRequestContext.messageContext.allMessages}">
+    <label class="${fn:toLowerCase(msg.severity)}">${fn:escapeXml(msg.text)}</label><br/>
+</c:forEach>

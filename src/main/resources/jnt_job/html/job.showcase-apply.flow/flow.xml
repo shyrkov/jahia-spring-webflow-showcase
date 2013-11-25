@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/webflow
+		http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd
+        ">
+
+    <var name="handler" class="org.jahia.modules.webflow.showcase.handler"/>
+    <var name="jobApplication" class="org.jahia.modules.webflow.showcase.JobApplication"/>
+    
+    <view-state id="personal" model="jobApplication">
+        <transition on="next" to="additional"/>
+	</view-state>
+
+    <view-state id="additional" model="jobApplication">
+        <transition on="previous" to="personal" />
+        <transition on="next" to="application" />
+    </view-state>
+    
+    <view-state id="application" model="jobApplication">
+        <transition on="previous" to="additional" />
+        <transition on="next" to="summary" />
+    </view-state>
+
+    <view-state id="summary" model="jobApplication">
+        <transition on="previous" to="application" bind="false" />
+        <transition on="finish" to="success" bind="false">
+        <evaluate
+            expression="handler.applyForJob(jobApplication, externalContext.nativeRequest.getAttribute('currentResource').node" />
+        </transition>
+    </view-state>
+
+    <view-state id="success" />
+
+	<view-state id="cancel" />
+
+    <global-transitions>
+        <transition on="cancel" to="cancel" bind="false" />
+    </global-transitions>
+    
+</flow>
