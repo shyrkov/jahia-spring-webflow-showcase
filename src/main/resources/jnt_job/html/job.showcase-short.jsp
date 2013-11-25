@@ -4,6 +4,7 @@
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions"%>
 <template:addResources type="css" resources="job.css"/>
 <c:set var="values" value="${currentNode.propertiesAsString}"/>
 <div class="spacer">
@@ -28,12 +29,7 @@
         </div>
         <p class="jobDescription">
             <span class="jobLabel"><fmt:message key="jnt_job.description"/>:</span>
-            <span class="jobtxt">${values.description}</span>
-        </p>
-
-        <p class="jobSkills">
-            <span class="jobLabel"><fmt:message key="jnt_job.skills"/>:</span>
-            <span class="jobtxt">${values.skills}</span>
+            <span class="jobtxt">${functions:abbreviate(values.description, 500, 550, '...')}</span>
         </p>
 
         <c:if test="${!renderContext.editMode && renderContext.mainResource.template != 'job-apply' && renderContext.mainResource.template != 'job-review'}">

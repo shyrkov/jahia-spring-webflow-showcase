@@ -16,7 +16,8 @@
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="job-apply"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
-                            <main-resource-display j:mainResourceView="showcase" jcr:primaryType="jnt:mainResourceDisplay"/>
+                            <main-resource-display j:mainResourceView="showcase-short"
+                                         jcr:primaryType="jnt:mainResourceDisplay"/>
                             <rich-text jcr:primaryType="jnt:bigText">
                                 <j:translation_en jcr:language="en"
                                        jcr:primaryType="jnt:translation"
@@ -35,7 +36,8 @@
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="job-review"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
-                            <main-resource-display j:mainResourceView="showcase" jcr:primaryType="jnt:mainResourceDisplay"/>
+                            <main-resource-display j:mainResourceView="showcase-short"
+                                         jcr:primaryType="jnt:mainResourceDisplay"/>
                             <rich-text jcr:primaryType="jnt:bigText">
                                 <j:translation_en jcr:language="en"
                                        jcr:primaryType="jnt:translation"
