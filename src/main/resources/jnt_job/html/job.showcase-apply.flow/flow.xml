@@ -6,7 +6,7 @@
 		http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd
         ">
 
-    <var name="handler" class="org.jahia.modules.webflow.showcase.handler"/>
+    <var name="handler" class="org.jahia.modules.webflow.showcase.JobApplicationHandler"/>
     <var name="jobApplication" class="org.jahia.modules.webflow.showcase.JobApplication"/>
     
     <view-state id="personal" model="jobApplication">
@@ -27,7 +27,7 @@
         <transition on="previous" to="application" bind="false" />
         <transition on="finish" to="success" bind="false">
         <evaluate
-            expression="handler.applyForJob(jobApplication, externalContext.nativeRequest.getAttribute('currentResource').node" />
+            expression="handler.applyForJob(jobApplication, externalContext.nativeRequest.getAttribute('currentResource').node)" />
         </transition>
     </view-state>
 
