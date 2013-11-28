@@ -46,7 +46,7 @@
         <version>6.7.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>spring-webflow-showcase</artifactId>
-    <name>Jahia Spring WebFlow Showcase</name>
+    <name>Jahia Spring Web Flow Showcase</name>
     <version>1.0.0-SNAPSHOT</version>    
     <packaging>bundle</packaging>
     <description>Jahia showcase demonstrating usage of Spring Web Flow</description>
