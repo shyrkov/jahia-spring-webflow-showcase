@@ -23,4 +23,4 @@ and run on a production instance of Jahia xCM.
 
 Requirements
 ------------
-Module is targeted to be deployed to Jahia xCM version 6.7.0.0 or later.
+Module is targeted to be deployed to Jahia xCM version 7.0.0.0 or later.
