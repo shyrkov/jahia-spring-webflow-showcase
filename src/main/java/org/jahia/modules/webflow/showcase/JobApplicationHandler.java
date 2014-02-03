@@ -60,6 +60,7 @@ import javax.jcr.version.VersionException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.jahia.api.Constants;
 import org.jahia.modules.webflow.showcase.JobApplication.UploadedFile;
 import org.jahia.services.content.JCRCallback;
 import org.jahia.services.content.JCRContentUtils;
@@ -138,7 +139,7 @@ public class JobApplicationHandler implements Serializable {
     }
 
     public void setApplicationStatus(String applicationId, String status) throws RepositoryException {
-        JCRSessionWrapper session = JCRSessionFactory.getInstance().getCurrentUserSession();
+        JCRSessionWrapper session = JCRSessionFactory.getInstance().getCurrentUserSession(Constants.LIVE_WORKSPACE);
         session.getNodeByIdentifier(applicationId).setProperty("status", status);
         session.save();
     }
