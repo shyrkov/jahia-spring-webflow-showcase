@@ -1,7 +1,7 @@
-Spring WebFlow Showcase for Jahia xCM
+Spring WebFlow Showcase for Digital Factory
 ==========================================
 
-This is a custom module for the Jahia xCM platform that shows the use of Spring WebFlow MVC
+This is a custom module for the Digital Factory platform that shows the use of Spring Web Flow MVC
 technology for creating powerful content views, supporting automatic form data binding, advanced validation
 and integration of complex business processing logic.
 
@@ -19,8 +19,8 @@ it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty
 of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 The status of this development is a "Prototype" and is not targeted to be deployed
-and run on a production instance of Jahia xCM.
+and run on a production instance of Digital Factory.
 
 Requirements
 ------------
-Module is targeted to be deployed to Jahia xCM version 7.0.0.0 or later.
+Module is targeted to be deployed to Digital Factory version 7.0.0.0 or later.
